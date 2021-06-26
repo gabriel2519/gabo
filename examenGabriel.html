@@ -1,0 +1,1045 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>tarea10</title>
+     <style>
+          canvas{
+               background-color: white;
+               border:solid black 3px;       
+          }
+          
+     </style>
+     <script>
+          window.onload = function(){
+               var lienzo = document.getElementById('miPanel');
+               if (lienzo && lienzo.getContext){
+                    var lapiz = lienzo.getContext('2d');
+                    if (lapiz){
+                         lapiz.beginPath();
+
+                         var gradiante = lapiz.createLinearGradient(10,10,1290,590);
+
+                         //color degradado de fondo
+
+                         gradiante.addColorStop(0,"#D5DBDB");
+                         gradiante.addColorStop(0.5,"#D5DBDB");
+                         gradiante.addColorStop(1,"#D5DBDB");
+
+                         //color de fondo
+
+                         lapiz.fillStyle = gradiante;
+                         lapiz.fillRect(10,10,1280,580);
+                         lapiz.stroke();
+                         lapiz.save();
+                         
+                         // sobra de las hojas blancas
+
+                         lapiz.beginPath();
+                         lapiz.fillStyle="white";
+                         lapiz.strockeStyle = "white";
+                         lapiz.lineWidth = 3;
+
+                         lapiz.shadowOffsetX=10;
+                         lapiz.shadowOffsetY=10;
+                         lapiz.shadowColor = "#777";
+                         lapiz.shadowBlur = 9;
+
+                         //hoja 1
+
+                         lapiz.fillRect(30,30,350,520);
+
+                     //hoja 2
+
+                         lapiz.fillRect(460,30,350,520);
+
+                         // hoja 3
+                         lapiz.fillRect(890,30,350,520);
+
+                         lapiz.restore();
+
+                         //Empieza diseño de la hoja 1
+
+                         //creacion de patron 1
+
+                    var objetoPatron = document.getElementById('patron');
+                    var elaborarPatron = objetoPatron.getContext('2d');
+                    elaborarPatron.fillStyle = "#566573";
+                    elaborarPatron.fillRect(1,1,2,2);
+
+
+                    var patron = lapiz.createPattern(objetoPatron,"repeat");
+                    lapiz.fillStyle = patron;
+                    
+                    
+                   // creacion patron 1
+                   //medidas y relleno
+                    lapiz.beginPath();
+                    lapiz.fillRect(80,250,150,59);
+                    lapiz.fill();
+                    lapiz.stroke();
+                    
+                    
+
+                    
+
+                   //creacion patron 2
+                    var objetoPatronD = document.getElementById('patron');
+                    var elaborarPatron = objetoPatronD.getContext('2d');
+                    elaborarPatron.fillStyle ="#566573" ;
+                    elaborarPatron.fillRect(1,1,2,2);
+                  
+                    var patron1 = lapiz.createPattern(objetoPatronD,"repeat");
+                     lapiz.fillStyle=patron1;
+
+                    // creacion de patron 2
+                    // medidas y relleno
+                    lapiz.beginPath();
+                    lapiz.fillRect(250,440,75,75);
+                    lapiz.fill();
+                    lapiz.stroke();
+                    lapiz.restore();
+
+                    //creacion patron 3
+
+                     var objetoPatronA= document.getElementById('patron');
+                    var elaborarPatron = objetoPatronA.getContext('2d');
+                    elaborarPatron.fillStyle ="#566573" ;
+                    elaborarPatron.fillRect(1,1,2,2);
+
+                    var patron2 = lapiz.createPattern(objetoPatronA,"repeat");
+                    lapiz.fillStyle = patron2;
+
+                    //creacion de patron 3
+                    //medidas y relleno
+
+                     lapiz.beginPath();
+                    lapiz.fillRect(30,510,90,40);
+                    lapiz.fill();
+                    lapiz.stroke();
+                    lapiz.save();
+
+
+
+                       // creacion de rectagulo purpura grande
+                        lapiz.beginPath();
+                        lapiz.fillStyle="#F7AEF6";
+                        lapiz.fillRect(60,30,160,70);
+                        lapiz.stroke();
+
+
+                        // creacion del cudrado purpura pequeño
+                        lapiz.beginPath();
+                        lapiz.fillStyle="#CD69CB";
+                        lapiz.fillRect(230,410,65,65);
+                        lapiz.stroke();
+                        lapiz.restore();
+                        
+
+
+                          //creacion de la leyenda BUSINES
+                          //tipo de fuente
+                          //tamaño de letra
+                          //color
+                         lapiz.beginPath();
+                         lapiz.font =" bold 45px Arial Narrow ";
+                         lapiz.fillStyle="#2C3E50 ";
+                         lapiz.fillText("BUSINESS",70,115);
+
+                         //creacion de la leyenda BROCHURE
+                          //tipo de fuente
+                          //tamaño de letra
+                          //color
+                         lapiz.beginPath();
+                         lapiz.font ="11px Arial ";
+                         lapiz.fillStyle = "#2C3E50";
+                         lapiz.fillText("BROCHURE",73,133);
+
+                         //creacion de la leyenda LOREM
+                          //tipo de fuente
+                          //tamaño de letra
+                          //color
+
+                         lapiz.beginPath();
+                         lapiz.font ="7px Arial ";
+                         lapiz.fillStyle="#E5E7E9 ";                       
+                         lapiz.fillText("Lorem ipsum, dolor sit amet consectetur adipisicing elit",73,144);
+                         lapiz.fillText("Libero, rem, labore obcaecati veritatis commodi maiores ",73,150);
+                         lapiz.fillText("Libero, rem, labore ",73,156);
+                         
+                          //creacion de media luna purpura inferior
+                         //color
+                         //´posicion
+                         //rotacion
+                         //tamaño
+
+
+
+                         lapiz.beginPath();
+                         
+                         lapiz.fillStyle="#B693CF";
+                         lapiz.lineWidth =0.1;                         
+                         lapiz.translate(147,323);
+                         lapiz.save();
+                         lapiz.rotate(216*Math.PI/360);
+                         lapiz.arc(150,100,80,3*Math.PI,1.8*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke(); 
+                         lapiz.restore();
+                         
+
+                         //creacion de semicirculo superior
+                         //color
+                         //posicion
+                         //rotacion
+                         //tamaño
+                          
+                         lapiz.beginPath();
+                         lapiz.fillStyle="#B693CF";
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(51.8,-150);
+                         lapiz.save();
+                         lapiz.rotate(198.10*Math.PI/90);
+                         lapiz.arc(150,1,75,70*Math.PI,1.6*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke();
+                         lapiz.restore();
+
+                         //creacion circulo diminuto 1
+                         //color
+                         //posicion
+                         //rotacion
+                         //tamaño
+                         lapiz.beginPath();
+                         lapiz.fillStyle=" #9676AD";
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(210,40);                                    
+                         lapiz.save();
+                         lapiz.rotate(90*Math.PI/90);
+                         lapiz.arc(360,70,4,0*Math.PI,2*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke();
+                         lapiz.restore();
+
+                         //creacion circulo diminuto 2
+                         //color
+                         //posicion
+                         //rotacion
+                         //tamaño
+
+                         lapiz.beginPath();                        
+                         lapiz.fillStyle="#9676AD";
+                         lapiz.lineWidth =0.1;                        
+                         lapiz.translate(190,80);
+                         lapiz.save();
+                         lapiz.rotate(90*Math.PI/90);
+                         lapiz.arc(360,70,4,0*Math.PI,2*Math.PI);
+                         lapiz.fill();                     
+                         lapiz.stroke();
+                         lapiz.restore();
+
+                         //creacion circulo diminuto 3
+                         //color
+                         //posicion
+                         //rotacion
+                         //tamaño
+                           
+                         lapiz.beginPath();
+                         lapiz.fillStyle="#9676AD";
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(30,170);
+                         lapiz.save();
+                         lapiz.rotate(90*Math.PI/90);
+                         lapiz.arc(360,70,4,0*Math.PI,2*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke();
+                         lapiz.restore();
+
+                         //creacion circulo diminuto 4
+                         //color
+                         //posicion
+                         //rotacion
+                         //tamaño
+
+                        lapiz.beginPath();                         
+                         lapiz.fillStyle="#9676AD";
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(-50,140);
+                         lapiz.save();
+                         lapiz.rotate(90*Math.PI/90);
+                         lapiz.arc(360,70,4,0*Math.PI,2*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke();
+                         lapiz.restore();
+
+                         //creacion circulo diminuto 4
+                         //color
+                         //posicion
+                         //rotacion
+                         //tamaño
+
+                         lapiz.beginPath();
+                         lapiz.fillStyle="#9676AD";
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(-90,-130);
+                         lapiz.rotate(90*Math.PI/90);
+                         lapiz.arc(360,70,4,0*Math.PI,2*Math.PI);
+                         lapiz.fill();
+                         lapiz.save();
+                         lapiz.stroke();
+                        
+                        //creacion de linea purpura
+                        //color
+                         //posicion
+                         //rotacion
+                         //tamaño
+
+                         lapiz.beginPath();                        
+                         lapiz.lineWidth = 7;
+                         lapiz.strokeStyle ="#DB7EE7";                       
+                         lapiz.moveTo(456,113);
+                         lapiz.lineTo(310,232);                                
+                         lapiz.stroke(); 
+                         lapiz.restore();
+                        
+
+
+                        // Crecion de arco 1
+                        //color
+                         //posicion
+                         //rotacion
+                         //tamaño
+                        lapiz.beginPath();                                               
+                         lapiz.lineWidth =1.5;
+                         lapiz.strokeStyle="#E5E7E9";
+                         lapiz.translate(-310,450 );
+                         lapiz.rotate(144*Math.PI/90);
+                         lapiz.arc(300,300,130,0*Math.PI,0.8*Math.PI);
+                         lapiz.stroke();
+                         
+                        // Crecion de arco 2
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+                         
+                    
+                         lapiz.beginPath();
+                    
+                         lapiz.lineWidth =1.5;
+                         lapiz.fillStyle="#E5E7E9 ";
+                         lapiz.translate(748,600);
+                         lapiz.rotate(147*Math.PI/180);
+                         lapiz.arc(97,99,143,120*Math.PI,0.9*Math.PI);          
+                         lapiz.stroke();
+
+
+                        // Crecion de triangulo 1
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+                         
+                         lapiz.beginPath();
+                         lapiz.lineWidth =1.5;
+                         lapiz.strokeStyle="#DB7EE7";
+                         lapiz.fillStyle="#DB7EE7";
+                         lapiz.translate(180,30);
+                         lapiz.rotate(103*Math.PI/180);
+                         lapiz.moveTo(170,100);
+                         lapiz.lineTo(170,150);                
+                         lapiz.lineTo(120,100);
+                         lapiz.fill();
+                         lapiz.closePath();
+                         lapiz.stroke();
+
+                         // Crecion de triangulo 2
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+
+                         lapiz.beginPath();
+                         lapiz.lineWidth =1.5;
+                         lapiz.strokeStyle="#DB7EE7";
+                         lapiz.fillStyle="#DB7EE7";
+                         lapiz.translate(155,50);
+                         lapiz.rotate(271*Math.PI/180);
+                         lapiz.moveTo(170,100);
+                         lapiz.lineTo(170,150);
+                         lapiz.lineTo(120,100);
+                         lapiz.fill();
+                         lapiz.closePath();
+                         lapiz.stroke();
+                         lapiz.save();
+
+
+
+
+
+                   //Empieza diseño de hoja 2
+                   //creacion del patron
+                         
+
+                     var objetoPatronD = document.getElementById('patron');
+                    var elaborarPatron = objetoPatronD.getContext('2d');
+                    elaborarPatron.fillStyle ="#566573" ;
+                    elaborarPatron.fillRect(1,1,2,2);
+                  
+                    var patron1 = lapiz.createPattern(objetoPatronD,"repeat");
+                     lapiz.fillStyle=patron1;
+
+                      // creacion de patron 1
+                    // medidas y relleno
+
+
+                    lapiz.beginPath();
+                    lapiz.fillRect(223,375,150,57);
+                    lapiz.fill();
+                    lapiz.stroke();
+                    lapiz.restore();
+
+                    //creacion del patron 2
+
+                     var objetoPatronD = document.getElementById('patron');
+                    var elaborarPatron = objetoPatronD.getContext('2d');
+                    elaborarPatron.fillStyle ="#566573" ;
+                    elaborarPatron.fillRect(1,1,2,2);
+                  
+                    var patron1 = lapiz.createPattern(objetoPatronD,"repeat");
+                     lapiz.fillStyle=patron1;
+                      // creacion de patron 2
+                    // medidas y relleno
+
+                    lapiz.beginPath();
+                    lapiz.fillRect(-150,585,150,57);
+                    lapiz.fill();
+                    lapiz.stroke();
+
+                     
+                    
+
+
+                    var patron1 = lapiz.createPattern(objetoPatronD,"repeat");
+                     lapiz.fillStyle=patron1;
+                      // creacion de patron 2
+                    // medidas y relleno
+
+                    lapiz.beginPath();
+                    lapiz.fillRect(-40,440,80,80);
+                    lapiz.fill();
+                    lapiz.stroke();
+                    
+
+
+
+                       // creacion de rectagulo rojo 1
+                       //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+                        lapiz.beginPath();
+                        lapiz.fillStyle="#D54B5C";
+                        lapiz.fillRect(227,600,145,62);
+                        lapiz.stroke();
+
+                      //creacion del rectangulo rojo 2
+                      //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+
+                        lapiz.beginPath();
+                        lapiz.fillStyle="#D54B5C";
+                        lapiz.translate(-45,-1.5 );
+                        lapiz.rotate(180.3*Math.PI/90);
+                        lapiz.fillRect(10,325,145,62);
+                        lapiz.stroke();
+
+                         //creacion de circulo 
+                         //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+                         lapiz.beginPath();
+                         lapiz.fillStyle="#E1B0B6";
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(290,560);
+                         lapiz.rotate(90*Math.PI/90);         
+                         lapiz.arc(45,45,75,80*Math.PI,3.9*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke();
+                         lapiz.save();
+
+                         //creacion de la leyenda BUSINES
+                          //tipo de fuente
+                          //tamaño de letra
+                          //color
+
+                         lapiz.beginPath();
+                         lapiz.font =" bold 48px Arial Narrow ";
+                         lapiz.fillStyle="#2C3E50 ";
+                         lapiz.translate(212,60);
+                         lapiz.rotate(90*Math.PI/90);
+                         lapiz.fillText("BUSINESS",70,115);
+                         lapiz.restore();
+                         
+                         //creacion de la leyenda BROCHURE
+                          //tipo de fuente
+                          //tamaño de letra
+                          //color
+
+                         lapiz.beginPath();
+                         lapiz.font =" bold 8px Arial Narrow ";
+                         lapiz.fillStyle = "#2C3E50";
+                         lapiz.translate(20,52);
+                         lapiz.rotate(135*Math.PI/90);
+                         lapiz.fillText("BROCHURE",73,133);
+
+
+                         //creacion de la leyenda Lorem
+                          //tipo de fuente
+                          //tamaño de letra
+                          //color
+
+
+                         lapiz.beginPath();
+                         lapiz.font ="7px Arial ";
+                         lapiz.fillStyle="#E5E7E9  ";
+                         lapiz.fillText("Lorem ipsum, dolor sit amet consectetur adipisicing elit",-150,300);
+                         lapiz.fillText("Libero, rem, labore obcaecati veritatis commodi maiores ",-150,306);
+                         lapiz.fillText("Libero, rem, labore ",-150,312);
+
+ 
+                        // creacion de media luna
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+                         lapiz.beginPath();
+                         lapiz.fillStyle="rgba(235, 44,68,0.2)"
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(-74,243);
+                         lapiz.save();
+                         lapiz.rotate(20*Math.PI/360);
+                         lapiz.arc(200,100,60,3*Math.PI,1.9*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke(); 
+                         lapiz.restore();
+
+                         //creacion Arco 1 hoja 2
+                         //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+                         lapiz.beginPath();                                               
+                         lapiz.lineWidth =1.5;
+                         lapiz.strokeStyle="#E5E7E9" ;
+                         lapiz.translate(558,261);
+                         lapiz.rotate(80*Math.PI/90);
+                         lapiz.arc(300,300,120,0*Math.PI,0.8*Math.PI);
+                         lapiz.stroke();
+
+                         //creacion Arco 2 hoja 
+                         //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+
+                         lapiz.beginPath();                   
+                         lapiz.lineWidth =1.5;
+                         lapiz.strokeStyle="#E5E7E9" ;
+                         lapiz.translate(541,1216 );
+                         lapiz.save();
+                         lapiz.rotate(100*Math.PI/90);
+                         lapiz.arc(300,300,130,0*Math.PI,0.6*Math.PI);
+                         lapiz.stroke();
+                         lapiz.restore();
+                         
+                         //circulo miniatura 1
+                         //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+                         lapiz.beginPath();
+                         lapiz.fillStyle="#E1B0B6";
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(80,-420);
+                         lapiz.save();
+                         lapiz.rotate(90*Math.PI/90);
+                         lapiz.arc(360,70,4,0*Math.PI,2*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke();
+                         lapiz.restore();
+
+                        //circulo miniatura 2
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+                         lapiz.beginPath();
+                         lapiz.fillStyle="#E1B0B6";
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(80,-380);
+                         lapiz.save();
+                         lapiz.rotate(90*Math.PI/90);
+                         lapiz.arc(360,70,4,0*Math.PI,2*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke();
+                         lapiz.restore();
+
+                        //circulo miniatura 3
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+                         lapiz.beginPath();
+                         lapiz.fillStyle="#E1B0B6";
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(-20,150);
+                         lapiz.save();
+                         lapiz.rotate(90*Math.PI/90);
+                         lapiz.arc(360,70,4,0*Math.PI,2*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke();
+                         lapiz.restore();
+
+                        //circulo miniatura 4
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+                         lapiz.beginPath();
+                         lapiz.fillStyle="#E1B0B6";
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(100,150);
+                         lapiz.save();
+                         lapiz.rotate(90*Math.PI/90);
+                         lapiz.arc(360,70,4,0*Math.PI,2*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke();
+                         lapiz.restore();
+
+                        //linea roja
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+
+                         lapiz.beginPath();
+                         lapiz.strokeStyle="#E1B0B6";
+                         lapiz.fillStyle="#E1B0B6";
+                         lapiz.lineWidth =8;
+                         lapiz.moveTo(-290,-390);
+                         lapiz.lineTo(-410,-60);
+                         lapiz.stroke();
+                         
+                         //creacion triangulo 1 hoja 2
+                        //linea roja
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+                         lapiz.beginPath();
+                         lapiz.lineWidth =1.5;
+                         lapiz.strokeStyle="#D54B5C";
+                         lapiz.fillStyle="#D54B5C";
+                         lapiz.translate(-600,-60);
+                         lapiz.rotate(288*Math.PI/180);
+                         lapiz.moveTo(170,100);
+                         lapiz.lineTo(170,150);
+                         lapiz.lineTo(120,100);
+                         lapiz.fill();
+                         lapiz.closePath();
+                         lapiz.stroke();
+
+                        // creacion triangulo 2
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+
+                        
+                         lapiz.beginPath();
+                         lapiz.lineWidth =1.5;
+                         lapiz.strokeStyle="#D54B5C";
+                         lapiz.fillStyle="#D54B5C";
+                         lapiz.translate(514    ,123);
+                         lapiz.rotate(-267*Math.PI/180);
+                         lapiz.moveTo(170,100);
+                         lapiz.lineTo(170,150);
+                         lapiz.lineTo(120,100);
+                         lapiz.fill();
+                         lapiz.closePath();
+                         lapiz.stroke();
+
+
+
+                         // Empieza diseño de hoja 3
+                         // creacion de semicirculo hoja 3
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+
+                         lapiz.beginPath();                        
+                         lapiz.fillStyle="rgba(244, 209, 78  ,0.4)"
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(-350,571);
+                         lapiz.rotate(67*Math.PI/90);
+                         lapiz.arc(45,45,75,80*Math.PI,3.5*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke();
+                         lapiz.save();
+                        
+                        //Elaboracion de patron 1
+
+                          var objetoPatronD = document.getElementById('patron');
+                    var elaborarPatron = objetoPatronD.getContext('2d');
+                    elaborarPatron.fillStyle ="#566573" ;
+                    elaborarPatron.fillRect(1,1,2,2);
+                  
+                    var patron1 = lapiz.createPattern(objetoPatronD,"repeat");
+                     lapiz.fillStyle=patron1;
+
+                     lapiz.fillStyle=patron1;
+                      // creacion de patron 
+                    // medidas y relleno
+
+                    lapiz.beginPath();
+                    lapiz.translate(-350,571);
+                    lapiz.rotate(112*Math.PI/90);
+                    lapiz.fillRect(-90,590,150,57);
+                    lapiz.fill();
+                    lapiz.stroke();
+                    lapiz.restore();
+            
+                   //Elaboracion de patron 2
+
+                     var objetoPatronD = document.getElementById('patron');
+                    var elaborarPatron = objetoPatronD.getContext('2d');
+                    elaborarPatron.fillStyle ="#566573" ;
+                    elaborarPatron.fillRect(1,1,2,2);
+                  
+                    var patron1 = lapiz.createPattern(objetoPatronD,"repeat");
+                     lapiz.fillStyle=patron1;
+
+                     lapiz.fillStyle=patron1;
+                      // creacion de patron 2
+                    // medidas y relleno
+
+
+                    lapiz.beginPath();
+                    lapiz.translate(-350,571);
+                    lapiz.rotate(112.5*Math.PI/90);
+                    lapiz.fillRect(107,255,147,56);
+                    lapiz.fill();
+                    lapiz.stroke();
+
+
+                     //Elaboracion de patron 3
+                     var patron1 = lapiz.createPattern(objetoPatronD,"repeat");
+                     lapiz.fillStyle=patron1;
+
+                      // creacion de patron 2
+                    // medidas y relleno
+
+                    lapiz.beginPath();
+                    lapiz.fillRect(60,400,90,90);
+                    lapiz.fill();
+                    lapiz.stroke();
+
+
+
+                
+
+                        // creacion de media luna amarilla hoja 3
+                         //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+                         lapiz.beginPath();
+                         lapiz.fillStyle="rgba(244, 209, 78  ,0.4)";
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(-31,20);
+                         lapiz.save();
+                         lapiz.rotate(162.5*Math.PI/360);
+                         lapiz.arc(300,100,80,3*Math.PI,2.1*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke(); 
+                         lapiz.restore();
+                      
+                      // creacion de la leyenda BUSINESS
+                          //tipo de fuente
+                          //tamaño de letra
+                          //color
+
+                          lapiz.beginPath();
+                         lapiz.font =" bold 50px Arial Narrow ";
+                         lapiz.fillStyle="#2C3E50 ";
+                         lapiz.translate(260,775    );
+                         lapiz.rotate(359*Math.PI/360);
+                         lapiz.fillText("BUSINESS",70,500);
+                         lapiz.save();
+                         lapiz.restore();
+
+                      //creacion de la leyenda BROCHURE
+                          //tipo de fuente
+                          //tamaño de letra
+                          //color
+                          lapiz.beginPath();
+                         lapiz.font =" bold 10px Arial Narrow ";
+                         lapiz.fillStyle = "#2C3E50";
+                         lapiz.translate(150,380);
+                         lapiz.rotate(180*Math.PI/90);
+                         lapiz.fillText("BROCHURE",73,133);
+                         lapiz.save();
+                         lapiz.restore();
+
+                    // creacion de la leyenda Lorem
+                          //tipo de fuente
+                          //tamaño de letra
+                          //color
+                         lapiz.beginPath();
+                         lapiz.font ="6px Arial ";
+                         lapiz.fillStyle="#E5E7E9  ";
+                         lapiz.fillText("Lorem ipsum, dolor sit amet consectetur adipisicing elit",-50,170);
+                         lapiz.fillText("Libero, rem, labore obcaecati veritatis commodi maiores ",-50,175);
+                         lapiz.fillText("Libero, rem, labore ",-50,180);
+                         lapiz.save();
+                         lapiz.restore();
+
+
+                        // creacion del cuadrado Amarillo pequeño
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+                        lapiz.beginPath();
+                        lapiz.fillStyle="#F8D963 ";
+                        lapiz.fillRect(-110,-100,85,85);
+                        lapiz.stroke();
+                        lapiz.restore();
+
+
+                        //creacion Arco 1 hoja 3
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+                         lapiz.beginPath();                                               
+                         lapiz.lineWidth =1.5;
+                         lapiz.strokeStyle="#F8D963" ;
+                         lapiz.translate(395,-542);
+                         lapiz.rotate(40*Math.PI/90);
+                         lapiz.arc(300,300,130,0*Math.PI,0.5*Math.PI);
+                         lapiz.stroke();
+
+                        //creacion Arco 2 hoja 3
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+                         lapiz.beginPath();                                               
+                         lapiz.lineWidth =1.5;
+                         lapiz.strokeStyle="rgba(248, 217, 99 ,0.4)";
+                         lapiz.translate(1006,805);
+                         lapiz.rotate(80*Math.PI/90);
+                         lapiz.arc(300,300,130,0*Math.PI,0.8*Math.PI);
+                         lapiz.stroke();
+
+                         //circulo pequeño 1 hoja 3
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+
+                         lapiz.beginPath();
+                         lapiz.fillStyle="rgba(244, 209, 78  ,0.5)"
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(700,550);
+                         lapiz.save();
+                         lapiz.rotate(90*Math.PI/90);
+                         lapiz.arc(360,70,4,0*Math.PI,2*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke();
+                         lapiz.restore();
+
+                         //circulo pequeño 2 hoja 3
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+                         lapiz.beginPath();
+                         lapiz.fillStyle="rgba(244, 209, 78  ,0.5)"
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(100,-100);
+                         lapiz.save();
+                         lapiz.rotate(90*Math.PI/90);
+                         lapiz.arc(360,70,4,0*Math.PI,2*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke();
+                         lapiz.restore();
+
+                        // circulo pequeño 3 hoja 3
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+
+                          lapiz.beginPath();
+                         lapiz.fillStyle="rgba(244, 209, 78  ,0.5)"
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(-180,-50);
+                         lapiz.save();
+                         lapiz.rotate(90*Math.PI/90);
+                         lapiz.arc(360,70,4,0*Math.PI,2*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke();
+                         lapiz.restore();
+
+
+                        // circulo pequeño 4 hoja 3
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+
+                         lapiz.beginPath();
+                         lapiz.fillStyle="rgba(244, 209, 78  ,0.5)"
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(420,145);
+                         lapiz.save();
+                         lapiz.rotate(90*Math.PI/90);
+                         lapiz.arc(360,70,4,0*Math.PI,2*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke();
+                         lapiz.restore();
+
+
+                        // circulo pequeño 5 hoja 3
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+
+                          lapiz.beginPath();
+                         lapiz.fillStyle="rgba(244, 209, 78  ,0.5)"
+                         lapiz.lineWidth =0.1;
+                         lapiz.translate(-220,190);
+                         lapiz.save();
+                         lapiz.rotate(90*Math.PI/90);
+                         lapiz.arc(360,70,4,0*Math.PI,2*Math.PI);
+                         lapiz.fill();
+                         lapiz.stroke();
+                         lapiz.restore();
+                         
+                        //creacion de triangulo 1 hoja 3
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+
+                         lapiz.beginPath();
+                         lapiz.lineWidth =1.5;
+                         lapiz.strokeStyle="#FD9538";
+                         lapiz.fillStyle="#FD9538";
+                         lapiz.translate(-380,10);
+                         lapiz.rotate(-150*Math.PI/180);
+                         lapiz.moveTo(170,100);
+                         lapiz.lineTo(170,150);
+                         lapiz.lineTo(120,100);
+                         lapiz.fill();
+                         lapiz.closePath();
+                         lapiz.stroke();
+
+                         //creacion de triangulo 2 hoja 3
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+
+
+                         lapiz.beginPath();
+                         lapiz.lineWidth =1.5;
+                         lapiz.strokeStyle="#FD9538";
+                         lapiz.fillStyle="#FD9538";
+                         lapiz.translate(100,410);
+                         lapiz.rotate(-180*Math.PI/180);
+                         lapiz.moveTo(170,100);
+                         lapiz.lineTo(170,150);
+                         lapiz.lineTo(120,100);
+                         lapiz.fill();
+                         lapiz.closePath();
+                         lapiz.stroke();
+
+
+                         //linea Amarilla
+                         //creacion de triangulo 1 hoja 3
+                        //color
+                        //posicion
+                        //rotacion
+                        //tamaño
+
+                         lapiz.beginPath();
+                         lapiz.strokeStyle="#FAB249 ";
+                         lapiz.fillStyle="#FAB249 ";
+                         lapiz.lineWidth =8;
+                         lapiz.moveTo(225,75);
+                         lapiz.lineTo(-140,70);
+                         lapiz.stroke();
+
+
+                         
+
+                        
+
+                      
+
+
+
+
+
+
+
+
+
+
+                       
+
+
+ 
+
+
+
+                       
+                    
+
+
+
+
+
+
+                          
+
+
+                         
+                                              
+
+           
+                    }
+               }
+          }
+          
+     </script>
+</head>
+<body>
+     
+     <canvas id="miPanel" width="1300" height="600">
+          <br>
+     </canvas>
+     <canvas id='patron' width="7" height="7" style="display: none"> 
+     </canvas>
+</body>
+</html>
